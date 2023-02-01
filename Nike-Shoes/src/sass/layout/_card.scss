@@ -1,0 +1,149 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.card {
+	height: 312px;
+	width: 266px;
+	border-radius: 20px;
+	box-shadow: 1px 3px 11px 1px;
+	position: absolute;
+	top: calc(50% - (312px / 2));
+	left: calc(50% - (266px / 2));
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		padding: 5px 5px 20px;
+	}
+
+	&__representation {
+		position: relative;
+	}
+
+	&__like {
+		position: absolute;
+		top: 5px;
+		right: 7px;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: $color-light;
+		cursor: pointer;
+		@extend %transition;
+	}
+
+	&__like-heart {
+		position: absolute;
+		top: 7.5px;
+		right: 5.5px;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		padding: 7px 10px 18px 2px;
+	}
+
+	&__name-and-rating {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__name {
+		color: $color-dark-text;
+	}
+
+	&__rating {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 42px;
+	}
+
+	&__rating-number {
+		color: $color-dark-text;
+	}
+
+	&__price {
+		padding-top: 5px;
+		color: $color-dark-text;
+	}
+
+	&__description {
+		padding-top: 8px;
+		color: $color-light-text;
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		padding-left: 5px;
+	}
+
+	&__add-remove {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 118px;
+		height: 36px;
+		border-radius: 10px;
+	}
+
+	&__remove {
+		height: 100%;
+		width: calc(100% / 3);
+		border-radius: 10px 0 0 10px;
+		background-color: $color-add-remote;
+		cursor: pointer;
+		@extend %transition;
+	}
+
+	&__amount {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-left: 1px solid $color-border;
+		border-right: 1px solid $color-border;
+		height: 100%;
+		width: calc(100% / 3);
+		background-color: $color-add-remote;
+	}
+
+	&__add {
+		height: 100%;
+		width: calc(100% / 3);
+		border-radius: 0 10px 10px 0;
+		background-color: $color-add-remote;
+		cursor: pointer;
+		@extend %transition;
+	}
+
+	&__add:hover,
+	&__remove:hover {
+		background-color: $color-border;
+		@extend %transition;
+	}
+
+	&__buy {
+		height: 36px;
+		width: 111px;
+		border-radius: 10px;
+		background-color: $color-buy;
+		color: $color-light;
+		cursor: pointer;
+		@extend %transition;
+
+		&:hover {
+			background-color: $color-buy-hover;
+			@extend %transition;
+		}
+	}
+}
+
+.selected {
+	background-color: $color-selected;
+	@extend %transition;
+}
